@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX POST 请求</title>
+    <style>
+        #result{
+            width: 200px;
+            height: 100px;
+            border: 1px solid #903;
+        }
+    </style>
+</head>
+<body>
+    <div id="result"></div>
+
+    <script>
+        const result = document.getElementById("result");
+        result.addEventListener("mouseover",function(){
+            //1.创建对象
+            const xhr = new XMLHttpRequest();
+
+            //2.初始化  设置类型与URL
+            xhr.open("POST","http://127.0.0.1:8000/server");
+            //设置请求头
+            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');  //预定义的请求头
+            xhr.setRequestHeader('name','zhaoxia');   //自定义的请求头，浏览器有安全机制，直接发送会报错
+            //3.发送
+            xhr.send('a=100&b=200&c=300');
+
+            //4.事件绑定，处理服务端返回的结果
+            xhr.onreadystatechange = function(){
+                //判断（服务端返回了所有的结果）
+                if(xhr.readyState ==4){
+                    //判断响应状态码 200 404 403 401 500
+                    //2xx  成功
+                    if(xhr.status >= 200 && xhr.status < 300){
+                        //处理结果  行 头 空行 体
+                        //1.响应行
+                        console.log(xhr.status);   //状态码
+                        console.log(xhr.statusText);  //状态字符串
+                        console.log(xhr.getAllResponseHeaders());  //所有响应头
+                        console.log(xhr.response);
+
+                        result.innerHTML = xhr.response;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

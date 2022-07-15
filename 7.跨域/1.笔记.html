@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+
+        同源策略：
+            同源策略（Same-Orign Policy）最早由Netscape公司提出，是浏览器的一种安全策略
+            同源：协议、域名、端口号  必须完全相同
+            违背同源策略就是跨域
+            AJAX在发送请求时是默认遵循同源策略的
+
+        如何解决跨域：
+            1.JSONP
+            （1）JSONP是什么
+            JSON with Padding，是一个非官方的跨域解决方案，纯粹凭借程序员的聪明才智开发出来，只支持get请求
+            （2）JSONP是怎么工作的
+            在网页中有一些标签天生具有跨域的能力，比如：img link iframe script
+            JSONP就是利用script标签的跨域能力发送请求的
+            （3）JSONP的使用
+                1.动态的创建一个script标签
+                    var script = document.creatElement("script");
+                2.设置script的src，设置回调函数
+                    script.src = "http://localhost:3000/testAJAX?callback=abc";
+                    
+
+            2.CORS
+            Cross-Orign Resource Sharing，跨域资源共享
+            
+
+
+
+
+            
+
+    -->
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--
+1.AJAX简介：异步JS和XML
+    特点：按需加载，减少资源浪费
+    Eg：一个网页中有的功能，用户点击才加载，如果用户没有点击发出请求，则不会加载，这个功能就是AJAX实现的
+    优点：
+        可以无需刷新页面与服务器端进行通信
+        允许根据用户事件来更新部分页面内容
+    缺点：
+        没有浏览历史，不能回退
+        存在跨域问题（同源）
+        SEO（搜索引擎优化）不友好，因为爬虫是爬不到的
+
+2.XML：可扩展标记语言
+    被用来存储和传输数据
+    和HTML不同的是没有预定义标签，全都是自定义标签，用来表示一些数据
+    XML用来存储和传输一些数据
+    AJAX最开始进行前后端数据交互的时候，用的数据格式就是XML，现在已经被JSON取代了
+    JSON相比于XML更加简洁
+
+3.HTTP：超文本传输协议，规定了浏览器和万维网之间相互通信的规则
+    请求报文
+        行   请求类型（GET和POST居多），URL，HTTP协议版本
+        头   
+            HOST:  atguigu.com
+            Cookie:  name=guigu
+            Content-type:  application/x-www-form-urlencoded
+            User-Agent:  chrome 83
+        空行
+        体  user-name=admin&password=admin
+        ……
+
+    响应报文
+        行  HTTP协议版本，响应状态码，响应字符串（例如：200代表OK）
+        头  Content-type:  text/html;charset=utf-8
+            Content-length:  2048
+            Content-encoding:  gzip
+        空行
+        体 
+        <html>
+            <head>
+            </head>
+            <body>
+                <h1>尚硅谷</h1>
+            </body>
+        </html>
+
+        注意：响应体返回html文档，浏览器进行解析和渲染，就呈现给我们是web页面了
+
+    ***要掌握如何在网络控制台查看通信报文
+        在网页的控制台点击“网络”
+        重点关注“标头”和“响应”
+        
+
+4.node.js安装
+        AJAX的应用过程中需要用到它
+
+5.Express框架的介绍与基本使用
+        基于node.js平台，快速、开放、极简的web开发框架
+        
+
+6.AJAX案例准备
+    （1）前端页面准备
+    （2）后端代码准备
+
+7.nodemon自动重启工具
+    能够帮助我们重新启动服务
+    -->
+</body>
+</html>
